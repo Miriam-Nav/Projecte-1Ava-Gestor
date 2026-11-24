@@ -13,7 +13,7 @@ Definida mediante variables CSS en `:root` dentro de `frontend/css/styles.css`:
 | Texto principal | `--texto` | `#1f2937` | Títulos, etiquetas y celdas de la tabla |
 | Texto secundario | `--suave` | `#6b7280` | Subtítulo, encabezados de tabla, títulos de tarjeta y estado vacío |
 | Bordes | `--borde` | `#d1d5db` | Bordes de paneles, tarjetas, inputs y divisores de tabla |
-| Primario (acción) | `--nvidia` | `#76b900` | Botón guardar movimiento y foco de campos |
+| Primario (acción) | `--verdeclaro` | `#76b900` | Botón guardar movimiento y foco de campos |
 | Ingreso / Éxito | `--verde` | `#1e8e3e` | Importe de ingresos, etiqueta ingreso y mensajes de éxito |
 | Gasto / Error | `--rojo` | `#d93025` | Importe de gastos, etiqueta gasto, botón eliminar y errores |
 | Secundario | `--turquesa` | `#1a8fa3` | Botones secundarios (cancelar edición y limpiar filtros) |
