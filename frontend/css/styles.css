@@ -225,30 +225,21 @@ main {
 /* Etiquetas, importes y mensajes */
 .etiqueta,
 .mensaje-estado {
-    display: inline-block;
-    border-radius: var(--radio);
     font-weight: 700;
     font-size: 14px;
 }
 
 .etiqueta {
-    padding: 3px 10px;
     text-transform: capitalize;
-}
-
-.mensaje-estado {
-    padding: 10px 14px;
 }
 
 .etiqueta-ingreso,
 .mensaje-exito {
-    background: #dcfce7;
     color: var(--verde);
 }
 
 .etiqueta-gasto,
 .mensaje-error {
-    background: #fee2e2;
     color: var(--rojo);
 }
 
