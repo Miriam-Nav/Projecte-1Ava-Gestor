@@ -66,28 +66,8 @@ Fondos suaves para etiquetas y avisos:
 La aplicación se organiza en una única pantalla principal sin recargas para agilizar el registro y la consulta diaria.
 
 ### Boceto de estructura (Wireframe)
+<img width="969" height="689" alt="image" src="https://github.com/user-attachments/assets/da2d83e8-5ce7-40be-87d8-a57d25ac44ac" />
 
-```text
-+-------------------------------------------------------------------+
-| CABECERA: Gestor de Ingresos y Gastos                             |
-| Subtítulo: Control personal de movimientos financieros            |
-+-------------------------------------------------------------------+
-| [ Total ingresos ]    [ Total gastos ]      [ Balance total ]     |
-+-------------------------------------------------------------------+
-| NUEVO MOVIMIENTO                                                  |
-| [ Tipo v ]            [ Cantidad (€) ]                            |
-| [ Categoría v ]       [ Fecha ]                                   |
-| [ Concepto (ancho completo)                                     ] |
-| [ Guardar movimiento ] [ Cancelar edición ]                       |
-+-------------------------------------------------------------------+
-| FILTROS                                                           |
-| [ Tipo v ]   [ Categoría v ]   [ Mes ]   [ Limpiar filtros ]      |
-+-------------------------------------------------------------------+
-| HISTORIAL DE MOVIMIENTOS                                          |
-| Fecha | Concepto | Categoría | Tipo | Cantidad | Acciones         |
-| ...   | ...      | ...       | ...  | ...      | [Editar][Borrar] |
-+-------------------------------------------------------------------+
-```
 
 ### Flujo de interacción
 
