@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Ingresos y Gastos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="cabecera">
+        <h1>Gestor de Ingresos y Gastos</h1>
+        <p class="subtitulo">Control personal de movimientos financieros</p>
+    </header>
+
+    <main>
+        <!-- Resumen: los tres totales se rellenarán desde app.js -->
+        <section class="resumen" aria-label="Resumen de balance">
+            <article class="tarjeta-resumen">
+                <h2>Total ingresos</h2>
+                <p id="total-ingresos" class="importe cantidad-ingreso">0,00 €</p>
+            </article>
+            <article class="tarjeta-resumen">
+                <h2>Total gastos</h2>
+                <p id="total-gastos" class="importe cantidad-gasto">0,00 €</p>
+            </article>
+            <article class="tarjeta-resumen">
+                <h2>Balance total</h2>
+                <p id="balance-total" class="importe">0,00 €</p>
+            </article>
+        </section>
+
+        <!-- Formulario para crear y editar movimientos -->
+        <section class="panel" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Nuevo movimiento</h2>
+            <form id="formulario-movimiento" class="formulario">
+                <input type="hidden" id="movimiento-id" name="id">
+
+                <div class="grupo-campo">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="gasto">Gasto</option>
+                        <option value="ingreso">Ingreso</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="cantidad">Cantidad (€)</label>
+                    <input type="number" id="cantidad" name="cantidad" step="0.01" min="0.01" placeholder="0.00"
+                        required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="Alimentación">Alimentación</option>
+                        <option value="Vivienda">Vivienda</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Ocio">Ocio</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Nómina">Nómina</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="grupo-campo campo-completo">
+                    <label for="concepto">Concepto</label>
+                    <input type="text" id="concepto" name="concepto" placeholder="Ej: Compra semanal, Nómina mensual..."
+                        required>
+                </div>
+
+                <div class="acciones-formulario campo-completo">
+                    <button type="submit" id="btn-guardar" class="btn btn-primario">Guardar movimiento</button>
+                    <button type="button" id="btn-cancelar" class="btn btn-secundario oculto">Cancelar edición</button>
+                </div>
+
+                <p id="mensaje-formulario" class="mensaje-estado campo-completo oculto" role="status"></p>
+            </form>
+        </section>
+
+        <!-- Filtros del historial -->
+        <section class="panel" aria-labelledby="titulo-filtros">
+            <h2 id="titulo-filtros">Filtros</h2>
+            <div class="filtros">
+                <div class="grupo-campo">
+                    <label for="filtro-tipo">Tipo</label>
+                    <select id="filtro-tipo">
+                        <option value="todos">Todos</option>
+                        <option value="ingreso">Ingresos</option>
+                        <option value="gasto">Gastos</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="filtro-categoria">Categoría</label>
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas</option>
+                        <option value="Alimentación">Alimentación</option>
+                        <option value="Vivienda">Vivienda</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Ocio">Ocio</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Nómina">Nómina</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="filtro-mes">Mes</label>
+                    <input type="month" id="filtro-mes">
+                </div>
+
+                <div class="grupo-campo accion-filtro">
+                    <button type="button" id="btn-limpiar-filtros" class="btn btn-secundario">Limpiar filtros</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabla con el historial -->
+        <section class="panel" aria-labelledby="titulo-movimientos">
+            <h2 id="titulo-movimientos">Historial de movimientos</h2>
+            <div class="tabla-contenedor">
+                <table class="tabla-movimientos">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Concepto</th>
+                            <th>Categoría</th>
+                            <th>Tipo</th>
+                            <th>Cantidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-movimientos"></tbody>
+                </table>
+            </div>
+            <p id="mensaje-vacio" class="mensaje-vacio">No hay movimientos registrados todavía. Añade el primero con el
+                formulario.</p>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

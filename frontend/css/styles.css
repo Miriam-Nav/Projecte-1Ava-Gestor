@@ -1,0 +1,277 @@
+:root {
+    --fondo: #eef1f4;
+    --blanco: #ffffff;
+    --texto: #1f2937;
+    --suave: #6b7280;
+    --borde: #d1d5db;
+    --verdeclaro: #76b900;
+    --verde: #1e8e3e;
+    --rojo: #d93025;
+    --turquesa: #1a8fa3;
+    --naranja: #d97706;
+    --radio: 4px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+/* Cabecera */
+.cabecera {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    padding: 16px 24px;
+    margin-bottom: 24px;
+}
+
+.cabecera h1 {
+    font-size: 20px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: var(--suave);
+}
+
+
+/* Contenedor principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjetas de resumen */
+.resumen {
+    display: grid;
+    /* Divide en 3 columnas iguales (1fr = 1 parte del espacio disponible) */
+    grid-template-columns: repeat(3, 1fr);
+    /* Separación entre filas y columnas sin añadir margen por fuera */
+    gap: 16px;
+}
+
+.tarjeta-resumen {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 20px 24px;
+}
+
+.tarjeta-resumen h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--suave);
+    margin-bottom: 4px;
+}
+
+.importe {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Paneles */
+.panel {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 24px;
+}
+
+.panel h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+/* Formulario y filtros */
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.campo-completo {
+    /* Ocupa desde la primera línea (1) hasta la última (-1) (todo el ancho) */
+    grid-column: 1 / -1;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-campo label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    /* font: inherit obliga a heredar la fuente y el tamaño del elemento padre (body) */
+    font: inherit;
+    background: var(--blanco);
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    outline: none;
+    border-color: var(--verdeclaro);
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 8px;
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    align-items: end;
+}
+
+.accion-filtro .btn {
+    width: 100%;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radio);
+    background: var(--turquesa);
+    color: var(--blanco);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(0.92);
+}
+
+.btn-primario {
+    background: var(--verdeclaro);
+}
+
+.btn-secundario {
+    background: var(--turquesa);
+}
+
+.btn-editar,
+.btn-eliminar {
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.btn-editar {
+    background: var(--naranja);
+}
+
+.btn-eliminar {
+    background: var(--rojo);
+}
+
+/* Tabla */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-movimientos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-movimientos th,
+.tabla-movimientos td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tabla-movimientos th {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--suave);
+}
+
+.celda-acciones {
+    display: flex;
+    gap: 6px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: var(--suave);
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/* Etiquetas, importes y mensajes */
+.etiqueta,
+.mensaje-estado {
+    display: inline-block;
+    border-radius: var(--radio);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.etiqueta {
+    padding: 3px 10px;
+    text-transform: capitalize;
+}
+
+.mensaje-estado {
+    padding: 10px 14px;
+}
+
+.etiqueta-ingreso,
+.mensaje-exito {
+    background: #dcfce7;
+    color: var(--verde);
+}
+
+.etiqueta-gasto,
+.mensaje-error {
+    background: #fee2e2;
+    color: var(--rojo);
+}
+
+.cantidad-ingreso {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+.cantidad-gasto {
+    color: var(--rojo);
+    font-weight: 700;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+
+    .resumen,
+    .formulario,
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+}
